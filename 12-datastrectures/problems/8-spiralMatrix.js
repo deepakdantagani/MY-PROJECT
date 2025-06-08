@@ -5,9 +5,11 @@
 var spiralOrder = function (matrix) {
   const result = [];
 
+  // pointers
   let row = 0;
   let column = 0;
 
+  // directions
   const directions = [
     [0, 1], // move right
     [1, 0], // move down
@@ -53,6 +55,7 @@ var spiralOrder = function (matrix) {
 /**
 notes 
 
+  - define pointers, directions, direction index, borders
   - Using direction vectors (`directions = [[0,1],[1,0],[0,-1],[-1,0]]`) to simplify direction changes.
 
   - Data visualization and UI rendering in grid or matrix form.

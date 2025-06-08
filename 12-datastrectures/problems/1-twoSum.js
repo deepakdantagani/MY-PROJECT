@@ -44,18 +44,25 @@ var twoSum = function(nums, target) {
     // }
     // return [];
 
-    let map = {};
-    for(let i=0;i< nums.length;i++){
-        let difference = target - nums[i];
-        if(difference in map){
-            return [i, map[difference]]
-        }
-        map[nums[i]] = i;
+    // let map = {};
+    // for(let i=0;i< nums.length;i++){
+    //     let difference = target - nums[i];
+    //     if(difference in map){
+    //         return [i, map[difference]]
+    //     }
+    //     map[nums[i]] = i;
+    // }
+    // return [];
+
+    const map = {};
+    for([index, num] of nums.entries()) {
+        const difference = target - num;
+        if(difference in map) return [map[difference], index];
+        map[num] = index
     }
-    return [];
 };
 
-twoSum([1, 24, 5], 25);
+console.log(twoSum([1, 24, 5], 25)); // [1, 2]
 
 
 

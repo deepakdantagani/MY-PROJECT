@@ -17,13 +17,13 @@
  */
 
 /**
- * init a veribale in the scope if not used outside, example mid value
+ * init a variable in the scope if not used outside, example mid value
  */
 
 /**
  * use the prime numbers to get a unique sum or multiplications
  * int[] primes = {3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,67,71,73,79,83,89,97,101,103, 107};
- * use charCodeAt along with the promenumbers to get a unique numbers for stings together
+ * use charCodeAt along with the promenaders to get a unique numbers for stings together
  * str.charCodeAt(i) - 97 to get the indexed value of the lower alphabets
  */
 

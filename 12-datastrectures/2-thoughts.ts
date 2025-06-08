@@ -42,11 +42,11 @@
 //be careful in the loop of trying to access next values, could cause array index out of bound errors
 //in numbers, we can access last digit with modulo
 // remove the last number using division
-//check for redue the process of half
+//check for reduce the process of half
 //remove unwanted variables
 //consider all edge cases and write them down, check the examples and constraints
 //read the question very carefully, find the hints, find all methods, understand the problem with examples too.
-//if some opration is repeating, we can comeup with the alternative approch
+//if some operation is repeating, we can comeup with the alternative approch
 //check the if conditional carefully
 //explain through the time complexity
 //if we do x+2 then it is linear time complexity, if we do x*2, this will be a log(x) complexity in the binary search
@@ -127,3 +127,41 @@
 /**
  * for any condition, always think of example if it is possible that it might not happen?
  */
+
+
+/**
+ * Key criteria for picking your shape
+ * | Criterion             | Array of tuples                  | Array of objects             | Object (map)                                   |
+| --------------------- | -------------------------------- | ---------------------------- | ---------------------------------------------- |
+| **Ordering matters**  | ✅ preserves order                | ✅ preserves order            | 🚫 not guaranteed (unless you use `Map`)       |
+| **Homogeneous data**  | ✅ e.g. matrix, coordinates       | possible but verbose         | ✅ if you need fast key lookup                  |
+| **Named fields**      | ❌ you need to remember positions | ✅ each record self-describes | ❌ must look up nested keys                     |
+| **Fast index lookup** | ✅ O(1) by numeric index          | ✅ O(1) by index              | 🚫 you’d have to convert keys to array indices |
+| **Fast key lookup**   | 🚫 linear scan                   | 🚫 linear scan               | ✅ O(1) by property name                        |
+| **Extensible schema** | ❌ awkward to add fields          | ✅ just add a new property    | ❌ harder to standardize shapes                 |
+
+Fixed Lookup Table (tuple list)
+ */
+const map = [
+    [1000, "M"], [900, "CM"],
+    // …  
+    [1,    "I"]
+  ];
+
+// Collection of records (list of objects)
+
+[
+    { id: "u123", name: "Alice", roles: ["admin"], lastSeen: 1684100000000 },
+    { id: "u456", name: "Bob",   roles: ["user"],  lastSeen: 1684200000000 },
+    // …
+  ]
+  // –> each entry carries its own named fields; easy filtering/sorting.
+  
+// Keyed lookup (object as map)
+const productsBySku = {
+    "SKU-001": { price: 9.99, stock: 120 },
+    "SKU-002": { price: 5.49, stock: 300 },
+    // …
+  };
+  // –> super‐fast property access when you know the key upfront.
+  

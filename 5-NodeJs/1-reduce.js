@@ -29,7 +29,6 @@ let objectArray234 = [{x: 1}, {x: 2}, {x: 3}];
 const totalSum2345 = objectArray234.reduce((accumulator, currentvalue) => {
     return accumulator + currentvalue.x}, 0);
 //console.log(totalSum2345)
-
 /**
  * Flatten an array of arrays
  */
